@@ -4,7 +4,17 @@
 
 local map = vim.keymap.set
 
+map("x", "p", '"_dP')
+
 map("i", "jk", "<Esc>", { noremap = true, silent = true })
+
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+map({ "n", "v" }, "<S-h>", "^", { desc = "Start of line" })
+map({ "n", "v" }, "<S-l>", "$", { desc = "End of line" })
 
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { silent = true })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { silent = true })
