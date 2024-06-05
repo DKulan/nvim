@@ -37,3 +37,9 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 -- Create new empty line above/below
 map("n", "<Enter>", "o<ESC>")
 map("n", "<S-Enter>", "O<ESC>")
+
+if vim.fn.executable("lazydocker") == 1 then
+  vim.keymap.set("n", "<leader>gd", function()
+    LazyVim.terminal("lazydocker", { esc_esc = false, ctrl_hjkl = false })
+  end, { desc = "Lazydocker" })
+end

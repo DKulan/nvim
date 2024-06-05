@@ -7,3 +7,4 @@ vim.g.root_spec = { "cwd" }
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.cursorline = false
