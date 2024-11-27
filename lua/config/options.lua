@@ -4,7 +4,9 @@
 
 -- Disable CWD from automatically changing in monorepos
 vim.g.root_spec = { "cwd" }
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.cursorline = false
+vim.opt.showtabline = 0
+vim.opt.laststatus = 0
+
+-- Enable this option to avoid conflicts with Prettier.
+vim.g.lazyvim_prettier_needs_config = true

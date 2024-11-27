@@ -1,5 +1,23 @@
 return {
   {
+    -- Auto-indents
+    "tpope/vim-sleuth",
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = false,
+      },
+    },
+  },
+  {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
@@ -29,31 +47,11 @@ return {
     },
   },
   {
-    "echasnovski/mini.files",
+    "neovim/nvim-lspconfig",
     opts = {
-      options = {
-        use_as_default_explorer = true,
-      },
-      windows = {
-        preview = true,
-        width_focus = 50,
-        width_preview = 50,
-      },
-    },
-    keys = {
-      {
-        "<leader>e",
-        function()
-          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-        end,
-        desc = "Open mini.files (Directory of Current File)",
-      },
-      {
-        "<leader>E",
-        function()
-          require("mini.files").open(vim.uv.cwd(), true)
-        end,
-        desc = "Open mini.files (cwd)",
+      -- disable same word highlighting
+      document_highlight = {
+        enabled = false,
       },
     },
   },
