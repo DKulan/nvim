@@ -9,26 +9,16 @@ vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
 
 -- Center cursor after moving up/down
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up half-page" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down half-page" })
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up half-page" })
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down half-page" })
 
 -- rebind q to shift+q to prevent accidental input
 map("n", "Q", "q", { noremap = true })
 map("n", "q", "<Nop>", { noremap = true })
 
-map("x", "p", '"_dP')
-
--- map("i", "jk", "<Esc>", { noremap = true, silent = true })
-
 -- shift h/l to move to beginning/end of line
 map({ "n", "v" }, "H", "^")
 map({ "n", "v" }, "L", "$")
-
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
-
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { silent = true })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { silent = true })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { silent = true })
