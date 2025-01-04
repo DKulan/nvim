@@ -6,6 +6,12 @@ return {
     },
   },
   {
+    "snacks.nvim",
+    opts = {
+      indent = { enabled = false },
+    },
+  },
+  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
