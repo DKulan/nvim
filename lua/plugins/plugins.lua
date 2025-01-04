@@ -6,50 +6,8 @@ return {
     },
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      inlay_hints = {
-        enabled = false,
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        ["json5"] = { "prettier" },
-      },
-    },
-  },
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "twig",
-      },
-    },
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        path_display = { "smart" },
-      },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      -- disable same word highlighting
-      document_highlight = {
-        enabled = false,
-      },
-    },
   },
   {
     "mikavilpas/yazi.nvim",
@@ -88,5 +46,108 @@ return {
     event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {},
+  },
+  {
+    "chrisgrieser/nvim-spider",
+    opts = {},
+    keys = {
+      {
+        "w",
+        "<cmd>lua require('spider').motion('w')<CR>",
+        mode = { "n", "o", "x" },
+        desc = "Move to start of next of word",
+      },
+      {
+        "e",
+        "<cmd>lua require('spider').motion('e')<CR>",
+        mode = { "n", "o", "x" },
+        desc = "Move to end of word",
+      },
+      {
+        "b",
+        "<cmd>lua require('spider').motion('b')<CR>",
+        mode = { "n", "o", "x" },
+        desc = "Move to start of previous word",
+      },
+    },
+  },
+  {
+    "nmac427/guess-indent.nvim",
+    opts = {
+      auto_cmd = true,
+      override_editorconfig = true,
+    },
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = ";;",
+        delete = ";d",
+        find = ";f",
+        find_left = ";F",
+        highlight = ";h",
+        replace = ";r",
+        update_n_lines = ";n",
+      },
+    },
+  },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        char = {
+          keys = { "f", "F", "t", "T" },
+        },
+      },
+    },
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    keys = {
+      {
+        "g/",
+        function()
+          require("rip-substitute").sub()
+        end,
+        mode = { "n", "x" },
+        desc = "Rip Substitute",
+      },
+    },
+  },
+  {
+    "johmsalas/text-case.nvim",
+    lazy = false,
+    config = true,
+    cmd = {
+      "Subs",
+      "TextCaseStartReplacingCommand",
+    },
+  },
+  {
+    "akinsho/git-conflict.nvim",
+    lazy = false,
+    opts = {
+      default_mappings = {
+        ours = "<leader>gho",
+        theirs = "<leader>ght",
+        none = "<leader>gh0",
+        both = "<leader>ghb",
+        next = "]x",
+        prev = "[x",
+      },
+    },
+    keys = {
+      {
+        "<leader>ghx",
+        "<cmd>GitConflictListQf<cr>",
+        desc = "List Conflicts",
+      },
+      {
+        "<leader>ghr",
+        "<cmd>GitConflictRefresh<cr>",
+        desc = "Refresh Conflicts",
+      },
+    },
   },
 }

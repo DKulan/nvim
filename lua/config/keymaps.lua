@@ -16,9 +16,6 @@ vim.keymap.del("n", "<A-k>")
 map("n", "Q", "q", { noremap = true })
 map("n", "q", "<Nop>", { noremap = true })
 
--- shift h/l to move to beginning/end of line
-map({ "n", "v" }, "H", "^")
-map({ "n", "v" }, "L", "$")
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { silent = true })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { silent = true })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { silent = true })
@@ -29,7 +26,3 @@ map("n", "<leader>\\", "<C-W>v", { desc = "Split Window Right", remap = true })
 -- Move line up/down in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
-
--- Create new empty line above/below
-map("n", "<Enter>", "o<ESC>")
-map("n", "<S-Enter>", "O<ESC>")
