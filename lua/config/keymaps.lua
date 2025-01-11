@@ -8,10 +8,6 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
 
--- Center cursor after moving up/down
--- vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up half-page" })
--- vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down half-page" })
-
 -- rebind q to shift+q to prevent accidental input
 map("n", "Q", "q", { noremap = true })
 map("n", "q", "<Nop>", { noremap = true })
