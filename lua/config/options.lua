@@ -11,4 +11,5 @@ vim.opt.number = false
 vim.opt.relativenumber = false
 
 -- Disable animations
-vim.g.snacks_animate = false
+vim.g.snacks_animate = true
+vim.opt.guicursor = "n-v-i-c:block-cursor"

@@ -6,6 +6,25 @@ return {
     },
   },
   {
+    "echasnovski/mini.files",
+    keys = {
+      {
+        "<leader>e",
+        function()
+          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+        end,
+        desc = "Open mini.files (Directory of Current File)",
+      },
+      {
+        "<leader>E",
+        function()
+          require("mini.files").open(vim.uv.cwd(), true)
+        end,
+        desc = "Open mini.files (cwd)",
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
@@ -17,44 +36,13 @@ return {
   {
     "snacks.nvim",
     opts = {
+      scratch = { enabled = false },
       indent = { enabled = false },
     },
   },
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
-  },
-  {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>e",
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<leader>E",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      {
-        -- NOTE: this requires a version of yazi that includes
-        -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-        "<c-up>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-      keymaps = {
-        show_help = "<f1>",
-      },
-    },
   },
   {
     "m4xshen/hardtime.nvim",
@@ -137,32 +125,6 @@ return {
     cmd = {
       "Subs",
       "TextCaseStartReplacingCommand",
-    },
-  },
-  {
-    "akinsho/git-conflict.nvim",
-    lazy = false,
-    opts = {
-      default_mappings = {
-        ours = "<leader>gho",
-        theirs = "<leader>ght",
-        none = "<leader>gh0",
-        both = "<leader>ghb",
-        next = "]x",
-        prev = "[x",
-      },
-    },
-    keys = {
-      {
-        "<leader>ghx",
-        "<cmd>GitConflictListQf<cr>",
-        desc = "List Conflicts",
-      },
-      {
-        "<leader>ghr",
-        "<cmd>GitConflictRefresh<cr>",
-        desc = "Refresh Conflicts",
-      },
     },
   },
 }
