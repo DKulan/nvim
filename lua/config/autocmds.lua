@@ -16,3 +16,5 @@ autocmd("Filetype", {
   end,
   desc = "Don't continue comments with o and O",
 })
+
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")

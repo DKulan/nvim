@@ -10,6 +10,8 @@ vim.opt.laststatus = 0
 vim.opt.number = false
 vim.opt.relativenumber = false
 
+-- Disable auto blank line at EOF when saving
+vim.opt.fixeol = false
+
 -- Disable animations
 vim.g.snacks_animate = true
-vim.opt.guicursor = "n-v-i-c:block-cursor"
