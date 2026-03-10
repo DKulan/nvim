@@ -7,6 +7,7 @@ vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
 vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
+vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
 
 -- rebind q to shift+q to prevent accidental input
 map("n", "Q", "q", { noremap = true })
@@ -22,3 +23,6 @@ map("n", "<leader>\\", "<C-W>v", { desc = "Split Window Right", remap = true })
 -- Move line up/down in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- save file
+map({ "i", "x", "n", "s" }, "<A-w>", "<cmd>w<cr><esc>", { desc = "Save File" })
